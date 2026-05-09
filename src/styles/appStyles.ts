@@ -35,7 +35,7 @@ priceBox: {
 
 cardYear: {
   fontSize: 12,
-  color: "#94A3B8",
+  color: "#f7f8f8",
   marginTop: 4,
 },
 
@@ -224,6 +224,16 @@ export const formStyles = StyleSheet.create({
   marginBottom: 20,
 },
 
+row: {
+  flexDirection: "row",
+  justifyContent: "space-between",
+  gap: 10,
+},
+
+halfInput: {
+  flex: 1,
+},
+
 saveButton: {
   backgroundColor: "#205781",
   paddingVertical: 15,
@@ -337,6 +347,57 @@ export const detailStyles = StyleSheet.create({
     backgroundColor: "#0F172A",
     padding: 20,
   },
+editButton: {
+  flex: 1,
+  backgroundColor: "#0EA5E9",
+  padding: 14,
+  borderRadius: 12,
+  alignItems: "center",
+},
+
+deleteButton: {
+  flex: 1,
+  backgroundColor: "#EF4444",
+  borderWidth: 1,
+  borderColor: "#EF4444",
+  padding: 14,
+  borderRadius: 12,
+  alignItems: "center",
+},
+  row: {
+  flexDirection: "row",
+  gap: 10,
+  marginBottom: 10,
+},
+
+halfCard: {
+  flex: 1,
+  backgroundColor: "#1E293B",
+  borderRadius: 12,
+  padding: 14,
+},
+
+priceCard: {
+  backgroundColor: "#062F2F",
+  borderWidth: 1,
+  borderColor: "#22C55E",
+  borderRadius: 12,
+  padding: 16,
+  marginBottom: 16,
+},
+
+priceValue: {
+  fontSize: 24,
+  fontWeight: "800",
+  color: "#22C55E",
+  marginTop: 4,
+},
+
+buttonRow: {
+  flexDirection: "row",
+  gap: 10,
+  marginTop: 10,
+},
 
   loadingText: {
     textAlign: "center",
@@ -371,7 +432,7 @@ export const detailStyles = StyleSheet.create({
 
   value: {
     fontSize: 16,
-    color: "#111827",
+    color: "#FFFFFF",
     marginTop: 4,
   },
 
@@ -379,25 +440,14 @@ export const detailStyles = StyleSheet.create({
     marginTop: 20,
   },
 
-  editButton: {
-    backgroundColor: "#205781",
-    padding: 14,
-    borderRadius: 12,
-    alignItems: "center",
-    marginBottom: 10,
-  },
+  
 
   editButtonText: {
     color: "#fff",
     fontWeight: "800",
   },
 
-  deleteButton: {
-    backgroundColor: "#DC2626",
-    padding: 14,
-    borderRadius: 12,
-    alignItems: "center",
-  },
+
 
   deleteButtonText: {
     color: "#fff",

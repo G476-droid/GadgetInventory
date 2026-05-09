@@ -41,10 +41,10 @@ export default function DetailScreen({ route, navigation }: Props) {
       "Eliminar gadget",
       `Estás seguro que quieres eliminar el gadget "${gadget.name}"? Está acción no se puede deshacer.`,
       [
-        {text: "Cancelar", style: "cancel"},
-        {text: "Eliminar", style:"destructive", onPress: handleDelete}
-      ]
-    )
+        { text: "Cancelar", style: "cancel" },
+        { text: "Eliminar", style: "destructive", onPress: handleDelete },
+      ],
+    );
   };
 
   const handleDelete = async (): Promise<void> => {
@@ -73,38 +73,40 @@ export default function DetailScreen({ route, navigation }: Props) {
         <Text style={detailStyles.title}>{gadget.name}</Text>
 
         <View style={detailStyles.field}>
-          <Text style={detailStyles.label}> Brand</Text>
-          <Text style={detailStyles.value}>{gadget.brand}</Text>
-        </View>
-
-        <View style={detailStyles.field}>
-          <Text style={detailStyles.label}>Categoria</Text>
+          <Text style={detailStyles.label}>CATEGORY</Text>
           <Text style={detailStyles.value}>{gadget.category}</Text>
         </View>
 
-        <View style={detailStyles.field}>
-          <Text style={detailStyles.label}>Precio</Text>
-          <Text style={detailStyles.value}>{gadget.price}</Text>
+        <View style={detailStyles.row}>
+          <View style={detailStyles.halfCard}>
+            <Text style={detailStyles.label}>BRAND</Text>
+            <Text style={detailStyles.value}>{gadget.brand}</Text>
+          </View>
+
+          <View style={detailStyles.halfCard}>
+            <Text style={detailStyles.label}>YEAR</Text>
+            <Text style={detailStyles.value}>{gadget.purchaseYear}</Text>
+          </View>
         </View>
 
-        <View style={detailStyles.field}>
-          <Text style={detailStyles.label}>Año</Text>
-          <Text style={detailStyles.value}>{gadget.purchaseYear}</Text>
+        <View style={detailStyles.priceCard}>
+          <Text style={detailStyles.label}>PRICE</Text>
+          <Text style={detailStyles.priceValue}>$ {gadget.price}</Text>
         </View>
 
-        <View style={detailStyles.buttonContainer}>
+        <View style={detailStyles.buttonRow}>
           <TouchableOpacity
             style={detailStyles.editButton}
             onPress={() => navigation.navigate("Form", { id: gadget.id })}
           >
-            <Text style={detailStyles.editButtonText}>✏️ Editar</Text>
+            <Text style={detailStyles.editButtonText}>Editar</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={detailStyles.deleteButton}
             onPress={confirmDelete}
           >
-            <Text style={detailStyles.deleteButtonText}>🗑️ Eliminar</Text>
+            <Text style={detailStyles.deleteButtonText}>Eliminar</Text>
           </TouchableOpacity>
         </View>
       </View>

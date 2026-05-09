@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Alert,
   ScrollView,
+  View,
   KeyboardAvoidingView,
 } from "react-native";
 
@@ -138,24 +139,6 @@ export const FormScreen = ({ route, navigation }: Props) => {
           maxLength={60}
         />
 
-        <Text style={formStyles.label}>Marca *</Text>
-        <TextInput
-          style={formStyles.input}
-          value={form.brand}
-          onChangeText={(value) => handleInputChange("brand", value)}
-          placeholder="Ej: Apple"
-          maxLength={60}
-        />
-
-        <Text style={formStyles.label}>Año *</Text>
-        <TextInput
-          style={formStyles.input}
-          value={form.purchaseYear}
-          onChangeText={(value) => handleInputChange("purchaseYear", value)}
-          keyboardType="numeric"
-          placeholder="Ej: 2008"
-        />
-
         <Text style={formStyles.label}>Categoría *</Text>
         <TextInput
           style={formStyles.input}
@@ -164,15 +147,44 @@ export const FormScreen = ({ route, navigation }: Props) => {
           placeholder="Ej: Programación"
           maxLength={60}
         />
-
-        <Text style={formStyles.label}>Precio *</Text>
+<Text style={formStyles.label}>Marca *</Text>
         <TextInput
           style={formStyles.input}
-          value={form.price}
-          onChangeText={(value) => handleInputChange("price", value)}
-          keyboardType="numeric"
-          placeholder="Ej: 999.99"
+          value={form.brand}
+          onChangeText={(value) => handleInputChange("brand", value)}
+          placeholder="Ej: Apple"
+          maxLength={60}
+        
         />
+        <View style={formStyles.row}>
+  <View style={formStyles.halfInput}>
+    <Text style={formStyles.label}>Precio *</Text>
+
+    <TextInput
+      style={formStyles.input}
+      value={form.price}
+      onChangeText={(value) => handleInputChange("price", value)}
+      keyboardType="numeric"
+      placeholder="999.99"
+    />
+  </View>
+
+  <View style={formStyles.halfInput}>
+    <Text style={formStyles.label}>Año *</Text>
+
+    <TextInput
+      style={formStyles.input}
+      value={form.purchaseYear}
+      onChangeText={(value) =>
+        handleInputChange("purchaseYear", value)
+      }
+      keyboardType="numeric"
+      placeholder="2024"
+    />
+  </View>
+</View>
+
+   
 
         <TouchableOpacity
           style={[
@@ -186,8 +198,8 @@ export const FormScreen = ({ route, navigation }: Props) => {
             {saving
               ? "Guardando..."
               : isEditMode
-              ? "Actualizar Gadget"
-              : "Guardar Gadget"}
+                ? "Actualizar Gadget"
+                : "Guardar Gadget"}
           </Text>
         </TouchableOpacity>
 
