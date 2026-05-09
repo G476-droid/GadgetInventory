@@ -88,7 +88,7 @@ export default function DetailScreen({ route, navigation }: Props) {
         </View>
 
         <View style={detailStyles.field}>
-          <Text style={detailStyles.label}>Año de Compra</Text>
+          <Text style={detailStyles.label}>Año</Text>
           <Text style={detailStyles.value}>{gadget.purchaseYear}</Text>
         </View>
 

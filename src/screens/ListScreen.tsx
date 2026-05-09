@@ -55,11 +55,12 @@ export const ListScreen = ({ navigation }: Props) => {
 
   return (
     <View style={listStyles.container}>
-      {/* Search bar */}
+  
       <View style={listStyles.searchContainer}>
         <TextInput
           style={listStyles.searchInput}
-          placeholder="🔍 Buscar por nombre..."
+          placeholder="🔍 Buscar por nombre o marca..."
+          placeholderTextColor="#94A3B8"
           value={searchText}
           onChangeText={setSearchText}
         />
@@ -91,11 +92,21 @@ export const ListScreen = ({ navigation }: Props) => {
             style={listStyles.card}
             onPress={() => navigation.navigate("Detail", { id: item.id })}
           >
-            <Text style={listStyles.cardName}>{item.name}</Text>
-            <Text style={listStyles.cardDetail}>
-              {item.brand} - {item.purchaseYear}
-            </Text>
-            <Text style={listStyles.cardGenre}>{item.category}</Text>
+            <View style={listStyles.cardContent}>
+              <View>
+                <Text style={listStyles.cardName}>{item.name}</Text>
+
+                <Text style={listStyles.cardDetail}>{item.brand}</Text>
+
+                <Text style={listStyles.cardGenre}>{item.category}</Text>
+              </View>
+
+              <View style={listStyles.priceBox}>
+                <Text style={listStyles.cardPrice}>$ {item.price}</Text>
+
+                <Text style={listStyles.cardYear}>{item.purchaseYear}</Text>
+              </View>
+            </View>
           </TouchableOpacity>
         )}
       />

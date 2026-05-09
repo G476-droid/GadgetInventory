@@ -1,27 +1,76 @@
 
 import { StyleSheet } from "react-native";
 export const COLORS = {
-  primary: "#205781",
-  secondary: "#4F959D",
-  background: "#0F172A",
+  primary: "#0F172A",
+  secondary: "#1E293B",
+  card: "#1E293B",
+  cardLight: "#243447",
+  background: "#020617",
   white: "#FFFFFF",
-  text: "#111827",
-  gray: "#6B7280",
-  border: "#E5E7EB",
-  success: "#DCFCE7",
+  text: "#F8FAFC",
+  gray: "#94A3B8",
+  border: "#334155",
+  blue: "#0EA5E9",
+  success: "#22C55E",
+  danger: "#EF4444",
+  purple: "#7C3AED",
+  warning: "#F59E0B",
 };
 
 export const listStyles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#0F172A",
-  },
+  flex: 1,
+  backgroundColor: COLORS.background,
+},
 
-  counterText: {
+cardContent: {
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+},
+
+priceBox: {
+  alignItems: "flex-end",
+},
+
+cardYear: {
+  fontSize: 12,
   color: "#94A3B8",
+  marginTop: 4,
+},
+
+cardPrice: {
+  fontSize: 18,
+  fontWeight: "800",
+  color: COLORS.success,
+  marginTop: 8,
+},
+
+counterText: {
+  color: COLORS.gray,
   marginHorizontal: 16,
   marginBottom: 8,
   fontWeight: "600",
+},
+
+emptyText: {
+  textAlign: "center",
+  color: COLORS.gray,
+  marginTop: 80,
+  fontSize: 16,
+},
+
+fab: {
+  position: "absolute",
+  right: 24,
+  bottom: 30,
+  backgroundColor: COLORS.blue,
+  width: 62,
+  height: 62,
+  borderRadius: 31,
+  alignItems: "center",
+  justifyContent: "center",
+  elevation: 6,
 },
 
   header: {
@@ -55,19 +104,15 @@ export const listStyles = StyleSheet.create({
   },
 
   card: {
-    backgroundColor: "#fff",
-    marginHorizontal: 16,
-    marginVertical: 8,
-    padding: 18,
-    borderRadius: 16,
-    borderLeftWidth: 5,
-    borderLeftColor: "#205781",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 8,
-    elevation: 3,
-  },
+  backgroundColor: COLORS.card,
+  marginHorizontal: 16,
+  marginVertical: 8,
+  padding: 18,
+  borderRadius: 16,
+  borderWidth: 1,
+  borderColor: COLORS.border,
+  elevation: 3,
+},
 
   bookTitle: {
     fontSize: 18,
@@ -112,19 +157,6 @@ export const listStyles = StyleSheet.create({
     fontSize: 16,
   },
 
-  fab: {
-    position: "absolute",
-    right: 24,
-    bottom: 30,
-    backgroundColor: "#205781",
-    width: 62,
-    height: 62,
-    borderRadius: 31,
-    alignItems: "center",
-    justifyContent: "center",
-    elevation: 6,
-  },
-
   fabText: {
     color: "#fff",
     fontSize: 34,
@@ -137,42 +169,37 @@ export const listStyles = StyleSheet.create({
 },
 
 searchInput: {
-  backgroundColor: "#fff",
+  backgroundColor: COLORS.card,
   borderWidth: 1,
-  borderColor: "#E5E7EB",
+  borderColor: COLORS.border,
   borderRadius: 14,
   paddingHorizontal: 14,
   paddingVertical: 12,
   fontSize: 14,
+  color: COLORS.white,
 },
 
 list: {
   paddingBottom: 100,
 },
 
-emptyText: {
-  textAlign: "center",
-  color: "#6B7280",
-  marginTop: 80,
-  fontSize: 16,
-},
 
 cardName: {
   fontSize: 18,
   fontWeight: "800",
-  color: "#205781",
+  color: COLORS.white,
 },
 
 cardDetail: {
   fontSize: 14,
-  color: "#6B7280",
+  color: COLORS.gray,
   marginTop: 4,
 },
 
 cardGenre: {
-  fontSize: 13,
-  color: "#166534",
-  backgroundColor: "#DCFCE7",
+  fontSize: 12,
+  color: COLORS.white,
+  backgroundColor: COLORS.purple,
   alignSelf: "flex-start",
   paddingHorizontal: 10,
   paddingVertical: 5,
@@ -181,6 +208,8 @@ cardGenre: {
   fontWeight: "700",
 },
 });
+
+
 
 export const formStyles = StyleSheet.create({
   container: {
